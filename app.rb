@@ -26,9 +26,9 @@ module Name
 			if @@depth_maze.to_visit.length == 0
 				@@depth_maze = MazeSolverDepth.new("./lib/maze.txt")
 			end
-			@@breadth_maze.step_path
-			@my_maze_path = @@breadth_maze.maze_path
-			@my_maze = @@breadth_maze.maze
+			@@depth_maze.step_path
+			@my_maze_path = @@depth_maze.maze_path
+			@my_maze = @@depth_maze.maze
 			erb :depth
 		end
 
