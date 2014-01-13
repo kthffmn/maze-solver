@@ -1,0 +1,60 @@
+<head>
+	<meta http-equiv="refresh" content="0.3" >
+</head>
+<h1>Game of Life</h1>
+<p><a href="/reset">RESET</a></p>
+
+<div id="content" style="display: inline-block">
+	<%w_counter = 0%>
+	<%h_counter = 0%>
+	<ul>
+	<%while w_counter < 28 do%>
+		<li>
+		<%while h_counter < 40 do%>
+			<div class="<%= if @my_board[w_counter][h_counter].age == 0 
+								"black" 
+							elsif @my_board[w_counter][h_counter].age == 1 
+								"red" 
+							elsif @my_board[w_counter][h_counter].age == 2 
+								"orange" 
+							elsif @my_board[w_counter][h_counter].age == 3 
+								"yellow"
+							elsif @my_board[w_counter][h_counter].age == 4 
+								"green" 
+							elsif @my_board[w_counter][h_counter].age == 5 
+								"blue" 
+							else 
+								"purple"  
+							end %>"
+			>..</div>
+			<%h_counter += 1 %>
+		<%end %>
+		<%h_counter = 0 %>	
+		<%w_counter +=1 %>
+		</li>
+	<%end%>
+	</ul>
+</div>
+
+<div style="display: inline-block; margin: 40px">
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;Key</p>
+	<p>color&nbsp;&nbsp;age</p>
+	<div class="key_red">
+		<p>red&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</p>
+	</div>
+	<div class="key_orange">
+		<p>orange&nbsp;&nbsp;2</p>
+	</div>
+	<div class="key_yellow">
+		<p>yellow&nbsp;&nbsp;3</p>
+	</div>
+	<div class="key_green">
+		<p>green&nbsp;&nbsp;&nbsp;4</p>
+	</div>
+	<div class="key_blue">
+		<p>blue&nbsp;&nbsp;&nbsp;&nbsp;5</p>
+	</div>
+	<div class="key_purple">
+		<p>purple&nbsp;&nbsp;6+</p>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<h1>Two Beehives in The Game of Life</h1>
+<p><a href="/reset">RESET</a></p>
+
+<div class="next">
+	next <a href="/next">-></a>
+</div>
+
+<div id="content" style="display: inline-block">
+	<%w_counter = 0%>
+	<%h_counter = 0%>
+	<ul>
+	<%while w_counter < 28 do%>
+		<li>
+		<%while h_counter < 40 do%>
+			<div class="<%= if @my_board[w_counter][h_counter].age == 0 
+								"black" 
+							else 
+								"red"  
+							end %>"
+			>..</div>
+			<%h_counter += 1 %>
+		<%end %>
+		<%h_counter = 0 %>	
+		<%w_counter +=1 %>
+		</li>
+	<%end%>
+	</ul>
+</div>

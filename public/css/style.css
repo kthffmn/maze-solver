@@ -1,0 +1,84 @@
+body {
+        font-family: "Courier New", Courier, monospace;
+        background-color: black;
+        color: white;
+}
+
+ul div {
+    display: inline;
+    width: 10px;
+    height: 5px;
+    margin-left: -8px;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    behavior: url(PIE.htc);
+}
+
+li {
+    list-style-type: none;
+    content: " ";
+    color: black;
+}
+
+A:link {text-decoration: none; color: #D8D8D8}
+A:visited {text-decoration: none; color: #B0B0B0}
+A:active {text-decoration: none; color: #D8D8D8}
+A:hover {text-decoration: underline overline; font-weight: bold}
+
+.next {
+    font-weight: bold;
+}
+.black {
+    background-color: black;
+}
+.red {
+    background-color: red;
+    color: red;
+}
+.orange {
+    background-color: orange;
+    color: orange;
+}
+.yellow {
+    background-color: yellow;
+    color: yellow;
+}
+.green {
+    background-color: green;
+    color: green;
+}
+.blue {
+    background-color: blue;
+    color: blue;
+}
+.purple {
+    background-color: purple;
+    color: purple;
+}
+
+
+.key_red {
+    color: red;
+    font-weight: bold;
+}
+.key_orange {
+    color: orange;
+    font-weight: bold;
+}
+.key_yellow {
+    color: yellow;
+    font-weight: bold;
+}
+.key_green {
+    color: green;
+    font-weight: bold;
+}
+.key_blue {
+    color: blue;
+    font-weight: bold;
+}
+.key_purple {
+    color: purple;
+    font-weight: bold;
+}
