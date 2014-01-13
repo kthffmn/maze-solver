@@ -3,7 +3,7 @@
 #######################
 # require 'rainbow'
 
-class MazeSolver
+class MazeSolverDepth
 	attr_reader :height, :width, :maze_path, :maze, :to_visit
 
 	def initialize(file_name) # in our case, maze.txt
