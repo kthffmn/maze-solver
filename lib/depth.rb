@@ -1,7 +1,7 @@
 #######################
 ### A - M A Z I N G ###
 #######################
-require 'rainbow'
+# require 'rainbow'
 
 class MazeSolver
 	attr_reader :height, :width, :maze_path, :maze, :to_visit
@@ -107,5 +107,5 @@ class MazeSolver
 	end
 end
 
-my_maze = MazeSolver.new("maze.txt")
-my_maze.animate_path
+# my_maze = MazeSolver.new("maze.txt")
+# my_maze.animate_path

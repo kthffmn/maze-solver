@@ -5,22 +5,24 @@
 <p><a href="/">BACK</a></p>
 
 <div id="content" style="display: inline-block">
-	<%w_counter = 0%>
 	<%h_counter = 0%>
 	<ul>
-	<%while w_counter < 28 do%>
+	<%while h_counter < 11 do%>
+		<%w_counter = 0%>
 		<li>
-		<%while h_counter < 40 do%>
-			<div class="<%= if @my_board[w_counter][h_counter].age == 0 
-								"black" 
-							else 
-								"red"  
+		<%while w_counter < 11 do%>
+
+			<div class="<%= if @my_maze_path[h_counter][w_counter]
+								"blue" 
+							elsif @my_maze[h_counter][w_counter]
+								"black"
+							else
+								"grey"
 							end %>"
-			>..</div>
-			<%h_counter += 1 %>
+			>#</div>
+			<%w_counter += 1 %>
 		<%end %>
-		<%h_counter = 0 %>	
-		<%w_counter +=1 %>
+		<%h_counter +=1 %>
 		</li>
 	<%end%>
 	</ul>

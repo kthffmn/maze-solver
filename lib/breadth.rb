@@ -1,9 +1,9 @@
 #######################
 ### A - M A Z I N G ###
 #######################
-require 'rainbow'
+# require 'rainbow'
 
-class MazeSolver
+class MazeSolverBreadth
 	attr_reader :height, :width, :maze_path, :maze, :to_visit
 
 	def initialize(file_name) # in our case, maze.txt
@@ -20,6 +20,7 @@ class MazeSolver
 		start_x, start_y = find_start
 		maze_path[start_y][start_x] = "start"
 		@to_visit = [[start_x, start_y]]
+		puts "initialize again"
 	end
 
 	def find_start
@@ -57,6 +58,8 @@ class MazeSolver
 	end
 
 	def step_path
+		puts "hello"
+		puts @to_visit.inspect
 		if @to_visit.length > 0
 			x, y = to_visit.shift #  "pop" (depth first) -or- "shift" (breadth first)
 			my_neighbors = unvisited_neighbors(x, y)
@@ -107,5 +110,5 @@ class MazeSolver
 	end
 end
 
-my_maze = MazeSolver.new("maze.txt")
-my_maze.animate_path
+# my_maze = MazeSolver.new("maze.txt")
+# my_maze.animate_path
