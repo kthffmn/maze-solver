@@ -20,7 +20,7 @@ class MazeSolverBreadth
 		start_x, start_y = find_start
 		maze_path[start_y][start_x] = "start"
 		@to_visit = [[start_x, start_y]]
-		puts "initialize again"
+		# puts "initialize again"
 	end
 
 	def find_start
@@ -58,9 +58,18 @@ class MazeSolverBreadth
 	end
 
 	def step_path
-		puts "hello"
-		puts @to_visit.inspect
+		# puts "hello"
+		# puts @to_visit.inspect
 		if @to_visit.length > 0
+			x, y = to_visit.shift #  "pop" (depth first) -or- "shift" (breadth first)
+			my_neighbors = unvisited_neighbors(x, y)
+			my_neighbors.each{|neighbor_x, neighbor_y| maze_path[neighbor_y][neighbor_x] = [x, y]}
+			@to_visit += my_neighbors
+		end
+	end
+
+	def step_path_with_while
+		while @to_visit.length > 0
 			x, y = to_visit.shift #  "pop" (depth first) -or- "shift" (breadth first)
 			my_neighbors = unvisited_neighbors(x, y)
 			my_neighbors.each{|neighbor_x, neighbor_y| maze_path[neighbor_y][neighbor_x] = [x, y]}
@@ -70,9 +79,7 @@ class MazeSolverBreadth
 
 	def animate_path
 		while @to_visit.length > 0
-			sleep(0.3)
 			step_path
-			system 'clear'
 			print_path
 		end
 	end
@@ -89,13 +96,13 @@ class MazeSolverBreadth
 	end
 
 	def print_path
-		#correct_path = get_correct_path
+		correct_path = get_correct_path
 		h_counter = 0
 		while h_counter < height do
 			w_counter = 0
 			while w_counter < width do
-				# if correct_path[h_counter][w_counter]
-				if maze_path[h_counter][w_counter]
+				if correct_path[h_counter][w_counter]
+				# if maze_path[h_counter][w_counter]
 					print " * ".color(0,0,255)
 				elsif maze[h_counter][w_counter]
 					print "   "

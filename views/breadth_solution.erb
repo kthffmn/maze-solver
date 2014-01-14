@@ -1,9 +1,6 @@
-<head>
-	<meta http-equiv="refresh" content="0.3" >
-</head>
-<h1>Maze Solver Depth-First</h1>
-<p><a href="/">BACK</a></p>
-<p><a href="/depth/solution">SOLUTION</a></p>
+<h1>Maze Solver Breadth-First Solution</h1>
+<p><a href="/breadth">BACK</a></p>
+<p><a href="/">HOME</a></p>
 
 <div id="content" style="display: inline-block">
 	<%h_counter = 0%>
@@ -13,8 +10,8 @@
 		<li>
 		<%while w_counter < 11 do%>
 
-			<div class="<%= if @my_maze_path[h_counter][w_counter]
-								"blue" 
+			<div class="<%= if @my_correct_path[h_counter][w_counter]
+								"green" 
 							elsif @my_maze[h_counter][w_counter]
 								"black"
 							else

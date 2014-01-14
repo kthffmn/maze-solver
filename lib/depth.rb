@@ -65,6 +65,15 @@ class MazeSolverDepth
 		end
 	end
 
+	def step_path_with_while
+		while @to_visit.length > 0
+			x, y = to_visit.shift #  "pop" (depth first) -or- "shift" (breadth first)
+			my_neighbors = unvisited_neighbors(x, y)
+			my_neighbors.each{|neighbor_x, neighbor_y| maze_path[neighbor_y][neighbor_x] = [x, y]}
+			@to_visit += my_neighbors
+		end
+	end
+
 	def animate_path
 		while @to_visit.length > 0
 			sleep(0.3)

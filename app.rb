@@ -22,6 +22,12 @@ module Name
 			erb :breadth
 		end
 
+		get "/breadth/solution" do
+			@@breadth_maze.step_path_with_while
+			@my_correct_path = @@breadth_maze.get_correct_path
+			@my_maze = @@breadth_maze.maze
+		end
+
 		get "/depth" do
 			if @@depth_maze.to_visit.length == 0
 				@@depth_maze = MazeSolverDepth.new("./lib/maze.txt")
@@ -30,6 +36,12 @@ module Name
 			@my_maze_path = @@depth_maze.maze_path
 			@my_maze = @@depth_maze.maze
 			erb :depth
+		end
+
+		get "/depth/solution" do
+			@@depth_maze.step_path_with_while
+			@my_correct_path = @@depth_maze.get_correct_path
+			@my_maze = @@depth_maze.maze
 		end
 
 	end
