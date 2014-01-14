@@ -20,6 +20,10 @@ li {
     color: black;
 }
 
+.green {
+    background-color: green;
+    color: green;
+}
 .blue {
     background-color: blue;
     color: blue;
