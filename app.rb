@@ -26,6 +26,7 @@ module Name
 			@@breadth_maze.step_path_with_while
 			@my_correct_path = @@breadth_maze.get_correct_path
 			@my_maze = @@breadth_maze.maze
+			erb :breadth_solution
 		end
 
 		get "/depth" do
@@ -42,6 +43,7 @@ module Name
 			@@depth_maze.step_path_with_while
 			@my_correct_path = @@depth_maze.get_correct_path
 			@my_maze = @@depth_maze.maze
+			erb :depth_solution
 		end
 
 	end
